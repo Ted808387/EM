@@ -2,7 +2,7 @@
   <div>
     <loading :active.sync="isLoading"></loading> 
     <div id="popup-overlay" class="menu-popup" :class="{popupClose : menu}">
-      <a href="!#" class="popup-close" @click="menu = !menu">
+      <a href="#" class="popup-close" @click.prevent="menu = !menu">
         <i class="fas fa-times menu-close"></i>
       </a>
       <ul class="menu-side pl-0 mt-3">
@@ -26,12 +26,12 @@
     <div class="header" :class="{headercolor : headerchange}">
       <div class="container">
         <header class="navbar navbar-expand-sm navbar-light justify-content-between">
-          <a href="!#" class="menu-toggle" @click="menu = !menu" v-if="displaymenu">
+          <div class="menu-toggle" @click.prevent="menu = !menu" v-if="displaymenu">
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
-          </a>
-          <a href="#">
+          </div>
+          <a href="!#">
             <router-link class="nav-link" to="/frontHome">
                 <img src="../assets/frontimg/virus-logo.png" style="height: 50px;">
             </router-link>
