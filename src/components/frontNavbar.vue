@@ -26,11 +26,11 @@
     <div class="header" :class="{headercolor : headerchange}">
       <div class="container">
         <header class="navbar navbar-expand-sm navbar-light justify-content-between">
-          <div class="menu-toggle" @click.prevent="menu = !menu" v-if="displaymenu">
+          <a href="!#" class="menu-toggle" @click.prevent="menu = !menu" v-if="displaymenu">
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
-          </div>
+          </a>
           <a href="!#">
             <router-link class="nav-link" to="/frontHome">
                 <img src="../assets/frontimg/virus-logo.png" style="height: 50px;">
