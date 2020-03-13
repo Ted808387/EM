@@ -40,9 +40,6 @@ export default new VueRouter({
             name: 'HelloWorld',
             path: '/',
             component: HelloWorld,
-            meta: {
-                requiresAuth: true, //確認進入Products頁面需要被驗證
-            },
             children: [
                 {
                     name: 'frontHome',
