@@ -26,7 +26,7 @@
     <div class="header" :class="{headercolor : headerchange}">
       <div class="container">
         <header class="navbar navbar-expand-sm navbar-light justify-content-between">
-          <div  class="omouse menu-toggle" @click.prevent="menu = !menu" v-if="displaymenu">
+          <div class="omouse menu-toggle" @click.prevent="menu = !menu" v-if="displaymenu">
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
