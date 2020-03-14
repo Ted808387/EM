@@ -13,7 +13,7 @@
                     －&nbsp;Payment Completed&nbsp;－
                 </h1>
                 <div class="mt-5 text-center">
-                    <router-link to="/frontProduct">
+                    <router-link to="/fronthome/frontProduct">
                         <i class="fas fa-chevron-left"></i>
                         <i class="fas fa-chevron-left"></i>
                         <h5 class="d-inline-block">Continue Shopping</h5>

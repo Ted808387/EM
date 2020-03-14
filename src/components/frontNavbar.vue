@@ -7,17 +7,17 @@
       </div>
       <ul class="menu-side pl-0 mt-3">
         <li class="mb-4">
-          <router-link to="/frontHome" class="menu-title">
+          <router-link to="/frontHome/frontHome" class="menu-title">
             <h4 @click="menu = !menu">HOME</h4>
           </router-link>
         </li>
         <li class="mb-4">
-          <router-link to="/frontCoupon" class="menu-title">
+          <router-link to="/frontHome/frontCoupon" class="menu-title">
             <h4 @click="menu = !menu">NEWS</h4>
           </router-link>
         </li>
         <li class="mb-4">
-          <router-link to="/frontProduct" class="menu-title">
+          <router-link to="/frontHome/frontProduct" class="menu-title">
             <h4 @click="menu = !menu">PRODUCTS</h4>
           </router-link>
         </li>
@@ -43,12 +43,12 @@
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link text-white font-weight-bold nav-text-color" to="/frontCoupon" :class="{fontcolor : headerchange}">
+                <router-link class="nav-link text-white font-weight-bold nav-text-color" to="/frontHome/frontCoupon" :class="{fontcolor : headerchange}">
                 NEWS
                 </router-link>
               </li>
               <li class="nav-item">
-              <router-link class="nav-link text-white font-weight-bold nav-text-color" to="/frontProduct" :class="{fontcolor : headerchange}">
+              <router-link class="nav-link text-white font-weight-bold nav-text-color" to="/frontHome/frontProduct" :class="{fontcolor : headerchange}">
                 PRODUCTS
                 </router-link>
               </li>
@@ -104,12 +104,12 @@
                       </tr>
                   </tfoot>
                 </table>
-                <router-link to="/frontCart" v-if="Cart.total !== 0">
+                <router-link to="/frontHome/frontCart" v-if="Cart.total !== 0">
                   <button type="button" class="btn btn-primary float-right font-weight-bold" style="width: 100%;" @click="cart = !cart">
                     Checkout
                   </button>
                 </router-link>
-                <router-link to="/frontProduct" v-if="Cart.total === 0">
+                <router-link to="/frontHome/frontProduct" v-if="Cart.total === 0">
                   <button type="button" class="btn btn-primary font-weight-bold" style="width: 100%;" @click="cart = !cart">
                     shop now
                   </button>

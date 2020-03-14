@@ -6,7 +6,7 @@
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
                         <div class="image" :style="{backgroundImage: 'url(' + bg1 + ')' }">
-                            <router-link to="/frontProduct" class="product-show">
+                            <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">熱門</h2>
                             </router-link>
                         </div>
@@ -17,7 +17,7 @@
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
                         <div class="image" :style="{backgroundImage: 'url(' + bg2 + ')' }">
-                            <router-link to="/frontProduct" class="product-show">
+                            <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">全商品</h2>
                             </router-link>
                         </div>
@@ -28,7 +28,7 @@
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
                         <div class="image" :style="{backgroundImage: 'url(' + bg3 + ')' }">
-                            <router-link to="/frontProduct" class="product-show">
+                            <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">口罩</h2>
                             </router-link>
                         </div>
@@ -39,7 +39,7 @@
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
                         <div class="image" :style="{backgroundImage: 'url(' + bg4 + ')' }">
-                            <router-link to="/frontProduct" class="product-show">
+                            <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">面罩</h2>
                             </router-link>
                         </div>
@@ -50,7 +50,7 @@
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
                         <div class="image" :style="{backgroundImage: 'url(' + bg5 + ')' }">
-                            <router-link to="/frontProduct" class="product-show">
+                            <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">面具</h2>
                             </router-link>
                         </div>

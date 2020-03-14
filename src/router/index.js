@@ -29,7 +29,7 @@ export default new VueRouter({
     routes: [
         {
             path: '*', //如果網頁位址尾端輸入亂碼
-            redirect: '/login',  //則返回設定得頁面(login)
+            redirect: '/frontHome',  //則返回設定得頁面(login)
         },
         {
             name: 'Login',
@@ -38,12 +38,12 @@ export default new VueRouter({
         },
         {
             name: 'HelloWorld',
-            path: '/',
+            path: '/frontHome',
             component: HelloWorld,
             children: [
                 {
                     name: 'frontHome',
-                    path: 'frontHome',
+                    path: '/frontHome',
                     component: frontHome,
                 },
                 {
@@ -112,13 +112,6 @@ export default new VueRouter({
                         requiresAuth: true, //確認進入Couponcode頁面需要被驗證
                     },
                 },
-            ],
-        },
-        {
-            name: 'Dashboard',
-            path: '/',
-            component: Dashboard,
-            children: [
                 {
                     name: 'CustomerOrder',
                     path: 'customer_order',

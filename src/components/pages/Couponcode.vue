@@ -31,7 +31,7 @@
             </tbody>
         </table>
         <!-- pagination -->
-        <pagination :getpagination="pagination" @userpage="getCoupon"></pagination>
+        <pagination :getpagination="pagination" @userpage="getcoupon"></pagination>
         <!-- Modal -->
         <div class="modal fade" id="couponModal" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,16 +112,16 @@ export default {
         pagination,
     },
     methods: {
-        getCoupon(page=1) {
-            const api = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/admin/coupons?page=${page}`;
+        getcoupon(page = 1) {
             const vm = this;
+            const api = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/admin/coupons?page=${page}`;
             vm.isLoading = true;
             this.$http.get(api).then((response) => {
                 vm.couponcode = response.data.coupons;
-                // console.log(response.data);
+                console.log(response.data);
                 vm.pagination = response.data.pagination;
                 vm.isLoading = false;
-                console.log(vm.couponcode);
+                // console.log(vm.couponcode);
             });
         },
         openModals(isNew, item) {
@@ -135,9 +135,9 @@ export default {
             $('#couponModal').modal('show');
         },
         createdCoupon() {
+            const vm = this;
             let api = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/admin/coupon`;
             let httpMethod = 'post';
-            const vm = this;
             vm.isLoading = true;
             if(!vm.isNew) {
                 api = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/admin/coupon/${vm.addCouponcode.id}`;
@@ -148,26 +148,27 @@ export default {
                 console.log(vm.addCouponcode);
                 if(response.data.success) {
                     $('#couponModal').modal('hide');
-                    vm.getCoupon();
+                    vm.getcoupon();
+                    // console.log(vm.addCouponcode);
                 }else {
                     $('#couponModal').modal('hide');
-                    vm.getCoupon();
+                    vm.getcoupon();
                 }
             });
         },
         deleteCoupon(id) {
-            const api = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/admin/coupon/${id}`;
             const vm = this;
+            const api = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/admin/coupon/${id}`;
             vm.isLoading = true;
             this.$http.delete(api).then((response) => {
                 vm.isLoading = false;
                 // console.log(response.data);
-                this.getCoupon();
+                this.getcoupon();
             });
         },
     },
     created() {
-       this.getCoupon();
+       this.getcoupon();
     },
 };
 </script>

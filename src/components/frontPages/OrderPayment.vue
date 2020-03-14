@@ -101,7 +101,7 @@ export default {
                 console.log(response.data);
                 vm.isLoading = false;
                 this.getOder();
-                vm.$router.push('/PaymentSuccessful');
+                vm.$router.push('/frontHome/PaymentSuccessful');
             });
             this.$bus.$emit('changecart');
         },

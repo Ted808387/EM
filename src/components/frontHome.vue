@@ -7,7 +7,7 @@
             <div class="bg mb-3">
                 <div class="header-text text-center">
                     <div class="text-center text-lg font-weight-bold">Rescue</div>
-                    <router-link to="/frontProduct">
+                    <router-link to="/frontHome/frontProduct">
                         <button class="btn btn-lg btn-dark mt-5">Show now</button>
                     </router-link>
                 </div>
@@ -91,7 +91,7 @@
                 <div class="couponImg">
                     <h1 class="discount-title-text text-white font-weight-bold text-lg">50% OFF</h1>
                     <h3 class="discount-sale-text text-white text-sm">HOT SALE</h3>
-                    <router-link to="/frontCoupon">
+                    <router-link to="/frontHome/frontCoupon">
                         <button class="discount-btn btn btn-success btn-lg">Coupon Code</button>
                     </router-link>
                 </div>
