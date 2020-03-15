@@ -25,7 +25,7 @@
                             <div class="col-md-7">
                                 <div class="imgbox">
                                     <div class="imgbox__inner imgbox__inner-4-3">
-                                        <img class="image1" src="../assets/frontimg/mask2.jpg">
+                                        <img class="image1" src="../../assets/frontimg/mask2.jpg">
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                             <div class="col-md-6 order-1 order-md-2">
                                 <div class="imgbox">
                                     <div class="imgbox__inner imgbox__inner-4-3">
-                                        <img class="image1" src="../assets/frontimg/testvirus.jpg">
+                                        <img class="image1" src="../../assets/frontimg/testvirus.jpg">
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                             <div class="col-md-6">
                                 <div class="imgbox">
                                     <div class="imgbox__inner imgbox__inner-4-3">
-                                        <img class="image1" src="../assets/frontimg/mask3.jpg">
+                                        <img class="image1" src="../../assets/frontimg/mask3.jpg">
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
 
 <script>
 import Slide from './frontSlide.vue';
-import Customer from './frontCustomerExperience.vue';
+import Customer from './frontCustomerExperience';
 import $ from 'jquery';
 
 export default {
@@ -154,7 +154,7 @@ export default {
     .bg {
         width: 100%;
         height: 600px;
-        background-image: url("../assets/frontbgimg/homebg.jpg");
+        background-image: url("../../assets/frontbgimg/homebg.jpg");
         background-position: center;
 	    background-size: cover;
         z-index: -10;
@@ -248,7 +248,7 @@ export default {
     .couponImg {
         width: 100%;
         padding: 30px 50px;
-        background-image: url('../assets/frontimg/discountImage.jpg');
+        background-image: url('../../assets/frontimg/discountImage.jpg');
         background-position: center;
         background-size: cover;
         display: block;

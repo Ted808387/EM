@@ -10,8 +10,8 @@ import Couponcode from '@/components/pages/Couponcode';
 import CustomerCheckout from '@/components/pages/CustomerCheckout';
 import Cart from '@/components/pages/Cart';
 //後台自訂義元件
-import HelloWorld from '@/components/HelloWorld';
-import frontHome from '@/components/frontHome';
+import HelloWorld from '@/components/frontPages/HelloWorld';
+import frontHome from '@/components/frontPages/frontHome';
 import frontProduct from '@/components/frontPages/frontProduct';
 import productIn from '@/components/frontPages/productIn';
 import frontCart from '@/components/frontPages/frontCart';

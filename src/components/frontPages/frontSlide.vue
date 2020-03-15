@@ -5,7 +5,8 @@
             <swiper-slide>
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
-                        <div class="image" :style="{backgroundImage: 'url(' + bg1 + ')' }">
+                        <div class="image" :style="{backgroundImage: 
+                        'url(https://miro.medium.com/max/5792/0*LEPkq1PSPaFPd4NK)' }">
                             <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">熱門</h2>
                             </router-link>
@@ -16,7 +17,8 @@
             <swiper-slide>
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
-                        <div class="image" :style="{backgroundImage: 'url(' + bg2 + ')' }">
+                        <div class="image" :style="{backgroundImage: 
+                        'url(https://images.unsplash.com/photo-1584020961222-f72484ed4d9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)' }">
                             <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">全商品</h2>
                             </router-link>
@@ -27,7 +29,8 @@
             <swiper-slide>
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
-                        <div class="image" :style="{backgroundImage: 'url(' + bg3 + ')' }">
+                        <div class="image" :style="{backgroundImage: 
+                        'url(https://images.unsplash.com/photo-1580281780460-82d277b0e3f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)' }">
                             <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">口罩</h2>
                             </router-link>
@@ -38,7 +41,8 @@
             <swiper-slide>
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
-                        <div class="image" :style="{backgroundImage: 'url(' + bg4 + ')' }">
+                        <div class="image" :style="{backgroundImage: 
+                        'url(https://priestsheetmetal.co.nz/wp-content/uploads/2019/05/priest_sheetmetal-welding-sheetmetal-christchurch_new_zealand-3840.jpg)' }">
                             <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">面罩</h2>
                             </router-link>
@@ -49,7 +53,8 @@
             <swiper-slide>
                 <div class="imgbox">
                     <div class="imgbox__inner imgbox__inner-4-3">
-                        <div class="image" :style="{backgroundImage: 'url(' + bg5 + ')' }">
+                        <div class="image" :style="{backgroundImage: 
+                        'url(https://www.manuremanager.com/wp-content/uploads/2019/09/a0ad274371d8c5d818f6646bbedbce84-1024x683.jpg)' }">
                             <router-link to="/frontHome/frontProduct" class="product-show">
                                 <h2 class="swiper-text">面具</h2>
                             </router-link>
@@ -65,11 +70,11 @@
 
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
-import bg1 from '../assets/frontSlideimg/slide1.jpg';
-import bg2 from '../assets/frontSlideimg/slide3.jpg';
-import bg3 from '../assets/frontSlideimg/slide2.jpg';
-import bg4 from '../assets/frontSlideimg/slide5.jpg';
-import bg5 from '../assets/frontSlideimg/slide4.jpg';
+import bg1 from '../../assets/frontSlideimg/slide1.jpg';
+import bg2 from '../../assets/frontSlideimg/slide3.jpg';
+import bg3 from '../../assets/frontSlideimg/slide2.jpg';
+import bg4 from '../../assets/frontSlideimg/slide5.jpg';
+import bg5 from '../../assets/frontSlideimg/slide4.jpg';
 
 export default {
     components: {

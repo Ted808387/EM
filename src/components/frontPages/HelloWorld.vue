@@ -10,8 +10,8 @@
 
 <script>
 import frontNavbar from './frontNavbar';
-import frontFooter from './frontFooter.vue';
-import Alert from './AlertMessage';
+import frontFooter from './frontFooter';
+import Alert from '../AlertMessage';
 
 export default {
     components: {

@@ -33,7 +33,7 @@
           </div>
           <a href="!#">
             <router-link class="nav-link" to="/frontHome">
-                <img src="../assets/frontimg/virus-logo.png" style="height: 50px;">
+                <img src="../../assets/frontimg/virus-logo.png" style="height: 50px;">
             </router-link>
           </a>
             <ul class="navbar-nav mx-auto" v-if="!displaymenu">

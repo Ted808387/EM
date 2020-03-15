@@ -5,28 +5,28 @@
                         <div class="col-3">
                             <div class="customerimgbox">
                                 <div class="customerimgbox-inner">
-                                    <img class="customerimg omouse" src="../assets/frontimg/CEimg/customerimg1.jpg">
+                                    <img class="customerimg omouse" src="../../assets/frontimg/CEimg/customerimg1.jpg">
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="customerimgbox">
                                 <div class="customerimgbox-inner">
-                                    <img class="customerimg omouse" src="../assets/frontimg/CEimg/customerimg2.jpg">
+                                    <img class="customerimg omouse" src="../../assets/frontimg/CEimg/customerimg2.jpg">
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="customerimgbox">
                                 <div class="customerimgbox-inner">
-                                    <img class="customerimg omouse" src="../assets/frontimg/CEimg/customerimg3.jpg">
+                                    <img class="customerimg omouse" src="../../assets/frontimg/CEimg/customerimg3.jpg">
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="customerimgbox">
                                 <div class="customerimgbox-inner">
-                                    <img class="customerimg omouse" src="../assets/frontimg/CEimg/customerimg4.jpg">
+                                    <img class="customerimg omouse" src="../../assets/frontimg/CEimg/customerimg4.jpg">
                                 </div>
                             </div>
                         </div>
@@ -35,28 +35,28 @@
                         <div class="col-3">
                             <div class="customerimgbox">
                                 <div class="customerimgbox-inner">
-                                    <img class="customerimg omouse" src="../assets/frontimg/CEimg/customerimg5.jpg">
+                                    <img class="customerimg omouse" src="../../assets/frontimg/CEimg/customerimg5.jpg">
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="customerimgbox">
                                 <div class="customerimgbox-inner">
-                                    <img class="customerimg omouse" src="../assets/frontimg/CEimg/customerimg6.jpg">
+                                    <img class="customerimg omouse" src="../../assets/frontimg/CEimg/customerimg6.jpg">
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="customerimgbox">
                                 <div class="customerimgbox-inner">
-                                    <img class="customerimg omouse" src="../assets/frontimg/CEimg/customerimg7.jpg">
+                                    <img class="customerimg omouse" src="../../assets/frontimg/CEimg/customerimg7.jpg">
                                 </div>
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="customerimgbox">
                                 <div class="customerimgbox-inner">
-                                    <img class="customerimg omouse" src="../assets/frontimg/CEimg/customerimg8.jpg">
+                                    <img class="customerimg omouse" src="../../assets/frontimg/CEimg/customerimg8.jpg">
                                 </div>
                             </div>
                         </div>
