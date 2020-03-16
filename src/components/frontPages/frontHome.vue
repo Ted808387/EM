@@ -1,12 +1,9 @@
 <template>
     <div>
-        <div class="scrolltop omouse" @click="scrollTop" v-if="scrolltop">
-            <i class="fas fa-angle-double-up fa-3x"></i>
-        </div>
         <section class="home">
             <div class="bg mb-3">
                 <div class="header-text text-center">
-                    <div class="text-center text-lg font-weight-bold">Rescue</div>
+                    <div class="text-center text-lg font-weight-bold">MASK</div>
                     <router-link to="/frontHome/frontProduct">
                         <button class="btn btn-lg btn-dark mt-5">Show now</button>
                     </router-link>
@@ -89,7 +86,7 @@
             <!-- discount -->
             <div class="discountCode">
                 <div class="couponImg">
-                    <h1 class="discount-title-text text-white font-weight-bold text-lg">50% OFF</h1>
+                    <h1 class="discount-title-text text-white font-weight-bold text-lg">80% OFF</h1>
                     <h3 class="discount-sale-text text-white text-sm">HOT SALE</h3>
                     <router-link to="/frontHome/frontCoupon">
                         <button class="discount-btn btn btn-success btn-lg">Coupon Code</button>
@@ -110,50 +107,17 @@ import Customer from './frontCustomerExperience';
 import $ from 'jquery';
 
 export default {
-    data() {
-        return {
-            scrolltop: false,
-        }
-    },
     components: {
       Slide,
       Customer,
-    },
-    methods: {
-        scrollTop() {
-            $('html,body').animate({
-                scrollTop: 0
-            }, 800);
-        },
-    },
-    created() {
-        window.addEventListener('scroll', () => {
-            let scrollTop = document.documentElement.scrollTop ||
-            document.body.scrollTop;
-            if (scrollTop > 500) {
-                this.scrolltop = true;
-            } 
-            else if (scrollTop < 500) {
-                this.scrolltop = false;
-            }
-        }, true);
     },
 };
 </script>
 
 <style>
-    .scrolltop {
-        position: fixed;
-        top: 80%;
-        right: 20px;
-        color: #6eb577;
-        z-index: 1000;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-        transition: all 0.3s;
-    }
     .bg {
         width: 100%;
-        height: 600px;
+        padding-top: 60vh;
         background-image: url("../../assets/frontbgimg/homebg.jpg");
         background-position: center;
 	    background-size: cover;
@@ -165,7 +129,7 @@ export default {
         top: 0;
         left: 0;
         width: 100%;
-        height: 600px;
+        padding-top: 60vh;
         background: linear-gradient(360deg, #70B594 69%, #1C1C1C 100%);
         background: -moz-linear-gradient(360deg, #70B594 69%, #1C1C1C 100%);
         background: -webkit-linear-gradient(360deg, #70B594 69%, #1C1C1C 100%);

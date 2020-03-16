@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                    <frontpagination :frontpagination="pagination" @userfrontpage="getproducts" v-if="displaypage"></frontpagination>
+                    <frontpagination :getpagination="pagination" @userpage="getproducts" v-if="displaypage"></frontpagination>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
 
 <script>
 import $ from 'jquery';
-import frontpagination from '../frontpagination';
+import frontpagination from '../pagination';
 
 export default {
     data() {

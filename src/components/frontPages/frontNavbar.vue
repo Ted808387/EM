@@ -1,6 +1,9 @@
 <template>
   <div>
     <loading :active.sync="isLoading"></loading> 
+    <div class="scrolltop omouse" @click="scrollTop" v-if="scrolltop">
+        <i class="fas fa-angle-double-up fa-3x"></i>
+    </div>
     <div id="popup-overlay" class="menu-popup" :class="{popupClose : menu}">
       <div class="omouse popup-close" @click.prevent="menu = !menu">
         <i class="fas fa-times menu-close"></i>
@@ -137,7 +140,8 @@ export default {
       Cart: {},
       status: {
           loading: {},
-      },      
+      },
+      scrolltop: false,
     };
   },
   methods: {
@@ -162,6 +166,11 @@ export default {
       this.gettoCart();  //還要在取回一次資料，不然頁面不會變動
       });
     },
+    scrollTop() {
+        $('html,body').animate({
+            scrollTop: 0
+        }, 800);
+    },
   },
   created() {
     // this.$bus.$on('car',(Cart) => {
@@ -175,6 +184,12 @@ export default {
       } 
       else if (scrollTop < 100) {
         this.headerchange = false;
+      }
+      if (scrollTop > 500) {
+        this.scrolltop = true;
+      } 
+      else if (scrollTop < 500) {
+        this.scrolltop = false;
       }
     }, true);
     window.addEventListener('resize', () => { 
@@ -198,6 +213,15 @@ export default {
 </script>
 
 <style>
+  .scrolltop {
+      position: fixed;
+      top: 80%;
+      right: 20px;
+      color: #6eb577;
+      z-index: 1000;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      transition: all 0.3s;
+  }
   .header{
     position: fixed;
     top: 0;

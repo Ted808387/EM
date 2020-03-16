@@ -1,7 +1,7 @@
  <!-- Pagination -->
  <template>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
+        <nav aria-label="FrontPage" class="FrontPage">
+            <ul class="pagination front-font-size">
                 <!-- 假如pagination.has_pre === false，就disabled顯示 -->
                 <li class="page-item" :class="{'disabled' : !getpagination.has_pre}">
                     <a class="page-link" href="#" aria-label="Previous" @click.prevent="updatapage(getpagination.current_page - 1)">
@@ -32,3 +32,13 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+    .FrontPage {
+        display: flex;
+        justify-content: center;
+    }
+    .front-font-size {
+        font-size: 16px;
+    }
+</style>

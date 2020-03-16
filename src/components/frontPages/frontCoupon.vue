@@ -8,10 +8,10 @@
                 <div class="coupon-code mt-5">
                     <div class="container">
                         <div class="coupon-img d-block text-white">
-                            <h2 class="Coupon p-4 font-weight-bold">因應Covid-19病毒流行優惠</h2>
+                            <h2 class="Coupon p-4 font-weight-bold">因應Covid-19流行</h2>
                             <h4 class="couponcode-title font-weight-bold">折扣碼</h4>
-                            <h1 class="couponcode coupon-shadow text-primary">health</h1>
-                            <h2 class="text-center font-weight-bold">商品全面5折</h2>
+                            <h1 class="couponcode coupon-shadow text-primary">888</h1>
+                            <h2 class="text-center font-weight-bold">商品全面8折</h2>
                         </div>
                     </div>
                 </div>
