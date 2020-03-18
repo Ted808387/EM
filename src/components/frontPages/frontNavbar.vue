@@ -5,7 +5,7 @@
         <i class="fas fa-angle-double-up fa-3x"></i>
     </div>
     <div id="popup-overlay" class="menu-popup" :class="{popupClose : menu}">
-      <div class="omouse popup-close" @click.prevent="menu = !menu">
+      <div class="omouse popup-close" @click.stop="menu = !menu">
         <i class="fas fa-times menu-close"></i>
       </div>
       <ul class="menu-side pl-0 mt-3">
@@ -29,7 +29,7 @@
     <div class="header" :class="{headercolor : headerchange}">
       <div class="container">
         <header class="navbar navbar-expand-sm navbar-light justify-content-between">
-          <div class="omouse menu-toggle" @click.prevent="menu = !menu" v-if="displaymenu">
+          <div class="omouse menu-toggle" @click.stop="menu = !menu" v-if="displaymenu">
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
             <span class="menu-line" :class="{bgcolor : headerchange}"></span>
@@ -61,11 +61,11 @@
             </router-link>
             <ul class="navbar-nav float-right">
               <li class="nav-item">
-                <a class="shopping-cart nav-link" href="!#" @click.prevent="cart = !cart">
-                  <i class="fas fa-shopping-basket fa-2x text-white nav-text-color" :class="{fontcolor : headerchange}"></i>
+                <div class="shopping-cart nav-link omouse">
+                  <i class="fas fa-shopping-basket fa-2x text-white nav-text-color" :class="{fontcolor : headerchange}" @click.stop="cart = !cart"></i>
                   <div class="product-quantity bg-primary" v-if="Cart.carts !== undefined && Cart.carts.length > 0">{{ Cart.carts.length}}</div>
                   <!-- <div class="product-quantity bg-primary" v-if="Cart.total === 0">0</div> -->
-                </a>
+                </div>
               </li>
             </ul>
             <!-- cart -->
@@ -108,12 +108,12 @@
                   </tfoot>
                 </table>
                 <router-link to="/frontHome/frontCart" v-if="Cart.total !== 0">
-                  <button type="button" class="btn btn-primary float-right font-weight-bold" style="width: 100%;" @click="cart = !cart">
+                  <button type="button" class="shop-btn btn btn-primary float-right font-weight-bold" style="width: 100%;" @click="cart = !cart">
                     Checkout
                   </button>
                 </router-link>
                 <router-link to="/frontHome/frontProduct" v-if="Cart.total === 0">
-                  <button type="button" class="btn btn-primary font-weight-bold" style="width: 100%;" @click="cart = !cart">
+                  <button type="button" class="shop-btn btn btn-primary font-weight-bold" style="width: 100%;" @click="cart = !cart">
                     shop now
                   </button>
                 </router-link>
@@ -173,9 +173,7 @@ export default {
     },
   },
   created() {
-    // this.$bus.$on('car',(Cart) => {
-    //   this.gettoCart(Cart);
-    // });
+    const vm = this;
     window.addEventListener('scroll', () => {
       let scrollTop = document.documentElement.scrollTop ||
       document.body.scrollTop;
@@ -199,11 +197,14 @@ export default {
          this.displaymenu = false;
        }
     }, false);
-    // document.addEventListener('click',(e) => {
-    //   if(e.target.className !== 'shopping-cart' || e.target.className !== 'modal-cart') {
-    //     this.cart = false;
-    //   }
-    // });
+    document.addEventListener('click',(e) => {
+        if(e.target.className !== 'modal-cart') {
+          vm.cart = false;
+        }
+        if(e.target.className !== 'popup-overlay') {
+          vm.menu = false;
+        }
+    });
     this.isLoading = false;
     this.gettoCart();
     this.$bus.$on('changecart',this.gettoCart);
@@ -348,18 +349,10 @@ export default {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.2);
-    /* opacity: 0; */
-    /* transition: all 0.3s; */
-    /* display: none; */
     visibility: hidden;
   }
   .opacity-cart {
-    /* opacity: 1; */
-    /* left: 65%; */
-    /* width: 350px; */
-    /* display: block; */
     visibility: visible;
-    /* transition: all 0.3s; */
   }
   .product-quantity {
     float: right;

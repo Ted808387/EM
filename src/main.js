@@ -19,7 +19,6 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css';
 // 自訂義套件
 
-
 axios.defaults.withCredentials = true;  //true可將cookie存起來
 Vue.config.productionTip = false;
 Vue.use(VueAxios, axios); //運行
