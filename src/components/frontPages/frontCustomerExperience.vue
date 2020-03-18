@@ -127,7 +127,6 @@ export default {
             vm.customer3 = response.data.result.reviews[3];
             vm.customer4 = response.data.result.reviews[4];
             });
-
             vm.axios.get('https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJH38xRaIEbjQRDWJcNbVlHi8&language=zh-TW&fields=name,url,rating,reviews&key=AIzaSyCb1GHHbO47CIiZg7Zmvw7cnAsyZGu9S74').then( (response) => {
             vm.customer0 = response.data.result.reviews[0];
             vm.customer1 = response.data.result.reviews[1];
