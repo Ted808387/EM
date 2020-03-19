@@ -12,10 +12,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/data': {                        // 自訂 local 端的位置
-        target: 'https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJH38xRaIEbjQRDWJcNbVlHi8&language=zh-TW&fields=name,url,rating,reviews&key=AIzaSyCb1GHHbO47CIiZg7Zmvw7cnAsyZGu9S74',  // 遠端 URL Domain
+        target: 'https://maps.googleapis.com/maps/api/place/details/',  // 遠端 URL Domain
         changeOrigin: true,
         pathRewrite: {
-          '^/data': '/data'
+          '^/data': ''
         }
       }
     },

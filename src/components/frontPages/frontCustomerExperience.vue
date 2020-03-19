@@ -120,7 +120,7 @@ export default {
     methods: {
         getid() {
             let vm = this;   
-            vm.axios.get('/data').then( (response) => {
+            vm.axios.get('/data/json?placeid=ChIJH38xRaIEbjQRDWJcNbVlHi8&language=zh-TW&fields=name,url,rating,reviews&key=AIzaSyCb1GHHbO47CIiZg7Zmvw7cnAsyZGu9S74').then( (response) => {
             vm.customer0 = response.data.result.reviews[0];
             vm.customer1 = response.data.result.reviews[1];
             vm.customer2 = response.data.result.reviews[2];
