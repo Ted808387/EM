@@ -198,7 +198,6 @@ export default {
        }
     }, false);
     document.addEventListener('click',(e) => {
-      console.log(e.target.className);
         if(e.target.className !== 'model-cart') {
           vm.cart = false;
         }
