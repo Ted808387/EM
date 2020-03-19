@@ -4,24 +4,24 @@
     <div class="scrolltop omouse" @click="scrollTop" v-if="scrolltop">
         <i class="fas fa-angle-double-up fa-3x"></i>
     </div>
-    <div id="popup-overlay" class="menu-popup" :class="{popupClose : menu}">
+    <div id="popup-overlay" class="menu-popup" :class="{popupClose : menu}" @click.stop="menu = true">
       <div class="omouse popup-close" @click.stop="menu = !menu">
         <i class="fas fa-times menu-close"></i>
       </div>
       <ul class="menu-side pl-0 mt-3">
         <li class="mb-4">
           <router-link to="/frontHome/frontHome" class="menu-title">
-            <h4 @click="menu = !menu">HOME</h4>
+            <h4 @click.stop="menu = !menu">HOME</h4>
           </router-link>
         </li>
         <li class="mb-4">
           <router-link to="/frontHome/frontCoupon" class="menu-title">
-            <h4 @click="menu = !menu">NEWS</h4>
+            <h4 @click.stop="menu = !menu">NEWS</h4>
           </router-link>
         </li>
         <li class="mb-4">
           <router-link to="/frontHome/frontProduct" class="menu-title">
-            <h4 @click="menu = !menu">PRODUCTS</h4>
+            <h4 @click.stop="menu = !menu">PRODUCTS</h4>
           </router-link>
         </li>
       </ul>
@@ -61,8 +61,8 @@
             </router-link>
             <ul class="navbar-nav float-right">
               <li class="nav-item">
-                <div class="shopping-cart nav-link omouse">
-                  <i class="fas fa-shopping-basket fa-2x text-white nav-text-color" :class="{fontcolor : headerchange}" @click.stop="cart = !cart"></i>
+                <div class="shopping-cart nav-link">
+                  <i class="fas fa-shopping-basket fa-2x text-white nav-text-color omouse" :class="{fontcolor : headerchange}" @click.stop="cart = !cart"></i>
                   <div class="product-quantity bg-primary" v-if="Cart.carts !== undefined && Cart.carts.length > 0">{{ Cart.carts.length}}</div>
                   <!-- <div class="product-quantity bg-primary" v-if="Cart.total === 0">0</div> -->
                 </div>
@@ -70,7 +70,7 @@
             </ul>
             <!-- cart -->
             <div calss="productModal">
-              <div class="modal-cart" :class="{'opacity-cart' : cart}">
+              <div class="modal-cart" :class="{'opacity-cart' : cart}" @click.stop="cart = true">
                 <div class="cart-alert text-center mt-2 mb-3" v-if="Cart.total === 0">－&nbsp;購物車無商品，請選購&nbsp;－</div>
                 <p class="mb-0 text-center" v-if="Cart.total !== 0">你的購物車</p>
                 <table class="table mt-1 mx-auto" v-if="Cart.total !== 0">
@@ -113,7 +113,7 @@
                   </button>
                 </router-link>
                 <router-link to="/frontHome/frontProduct" v-if="Cart.total === 0">
-                  <button type="button" class="shop-btn btn btn-primary font-weight-bold" style="width: 100%;" @click="cart = !cart">
+                  <button type="button" class="shop-btn btn btn-primary font-weight-bold" style="width: 100%;" @click.stop="cart = !cart">
                     shop now
                   </button>
                 </router-link>
@@ -198,13 +198,20 @@ export default {
        }
     }, false);
     document.addEventListener('click',(e) => {
-        if(e.target.className !== 'modal-cart') {
+      console.log(e.target.className);
+        if(e.target.className !== 'model-cart') {
           vm.cart = false;
         }
         if(e.target.className !== 'popup-overlay') {
           vm.menu = false;
         }
     });
+    // },false);
+    // $(document).mouseup(function(e){
+    //   if(!$('.modal-cart').is(e.target) && $('.modal-cart').has(e.target).length === 0){ 
+    //     vm.cart = false;
+    //   }
+    // });
     this.isLoading = false;
     this.gettoCart();
     this.$bus.$on('changecart',this.gettoCart);
