@@ -7,6 +7,7 @@
                     <router-link to="/frontHome/frontProduct">
                         <button class="btn btn-lg btn-dark mt-5">Show now</button>
                     </router-link>
+                    <div class="scrolldown omouse" @click.stop="scrolldown"><i class="fas fa-chevron-circle-down"></i></div>
                 </div>
             </div>
             <div class="productionitem">
@@ -111,6 +112,13 @@ export default {
       Slide,
       Customer,
     },
+    methods: {
+        scrolldown() {
+            $('html,body').animate({
+                scrollTop: 850
+            }, 600);
+        },
+    },
 };
 </script>
 
@@ -165,6 +173,33 @@ export default {
     /* Mouse */
     .omouse {
         cursor: pointer;
+    }
+    .scrolldown {
+        width: 36px;
+        margin: 100px auto 0;
+        font-size: 32px;
+        color: #fff;
+        opacity: 0.6;
+        transition: all 0.3s;
+        animation-name: scroll;
+        animation-iteration-count: infinite;
+        animation-duration: 4s;
+    }
+    .scrolldown:hover {
+        margin-top: 90px;
+        opacity: 1;
+        transition: all 0.3s;
+        animation-name: stopcolor;
+    }
+    @keyframes stopcolor {
+        0% {opacity: 1;}
+    }
+    @keyframes scroll {
+    0% {opacity: 1;}
+    25% {opacity: 0.2;}
+    50% {opacity: 0.6;}
+    75% {opacity: 0.8;}
+    100% {opacity: 1;}
     }
     /* Image */
     .image1{
