@@ -127,7 +127,6 @@ export default {
                 vm.customer2 = response.data.result.reviews[2];
                 vm.customer3 = response.data.result.reviews[3];
                 vm.customer4 = response.data.result.reviews[4];
-                console.log(response);
             });
         },
     },
