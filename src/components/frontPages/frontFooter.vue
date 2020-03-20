@@ -12,10 +12,15 @@
                 <div class="col-sm-2 footer-card offset-sm-1">
                     <h4 class="text-white font-weight-bold footer-title">Quick Links</h4>
                     <div class="footer-middle text-white">
-                        <p class="omouse footer-text-color">Home</p>
-                        <p class="omouse footer-text-color">News</p>
-                        <p class="omouse footer-text-color">Products</p>
-                        <p class="omouse footer-text-color">Discount</p>
+                        <p>
+                            <router-link class="omouse footer-text-color" to="/frontHome/frontHome">Home</router-link>
+                        </p>
+                        <p class="omouse footer-text-color">
+                            <router-link class="omouse footer-text-color" to="/frontHome/frontCoupon">News</router-link>
+                        </p>
+                        <p class="omouse footer-text-color">
+                            <router-link class="omouse footer-text-color" to="/frontHome/frontProduct">Products</router-link>
+                        </p>
                     </div>
                 </div>
                 <div class="col-sm-5 footer-card offset-sm-1 text-white">
@@ -97,6 +102,7 @@ export default {
     }
     .footer-text-color:hover {
         color: #3C804B !important;
+        text-decoration: none;
         transition: color 0.4s;
     }
     .footer-bottom {

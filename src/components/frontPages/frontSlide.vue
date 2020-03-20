@@ -101,9 +101,6 @@ export default {
                 initialSlide: -1,
                 pagination : '.swiper-pagination',
                 paginationClickable :true,
-                // prevButton:'.swiper-button-prev',//上一張
-                // nextButton:'.swiper-button-next',//下一張
-                // scrollbar:'.swiper-scrollbar',//滾動條
                 mousewheelControl : true,
                 observeParents: true,
                 slidesPerView: 3,

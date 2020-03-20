@@ -10,15 +10,7 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-      '/data': {                        // 自訂 local 端的位置
-        target: 'https://maps.googleapis.com/maps/api/place/details/',  // 遠端 URL Domain
-        changeOrigin: true,
-        pathRewrite: {
-          '^/data': ''
-        }
-      }
-    },
+    proxyTable: {},
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

@@ -103,7 +103,7 @@ export default {
             isLoading: false, 
             Cart: {},
             couponcode: '',
-            form: {   //購物車訂購
+            form: {
                 user: {
                     name: '',
                     email: '',
@@ -118,30 +118,13 @@ export default {
         };
     },
     methods: {
-        // addtoCar(id, qty) {
-        //     const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/cart`;
-        //     const vm = this;  
-        //     vm.status.loading = id;
-        //     const car = {
-        //         product_id: id,
-        //         qty  //可直接用一個變數代替，直接將值帶進來
-        //     };
-        //     this.$http.post(url, { data:car }).then((response) => {
-        //         // console.log(response);
-        //         vm.status.loading = "";
-        //         // $('#productModal').modal('hide');
-        //         this.gettoCar();
-        //     });
-        // },
         gettoCar() {   //把購物車資料在取回，不然頁面不會變動
             const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/cart`;
             const vm = this;  
             vm.isLoading = true;
             this.$http.get(url).then((response) => {
                 vm.Cart = response.data.data;
-                // console.log(response);
                 vm.isLoading = false;
-                // this.$bus.$emit('car',vm.Cart);
             });
         },
         deleteCar(id) {  //將選擇的物品id傳過來
@@ -149,7 +132,6 @@ export default {
             const vm = this;  
             vm.status.loading = true;
             this.$http.delete(url).then((response) => {
-                // console.log(response.data);
                 vm.status.loading = false;
                 this.$bus.$emit('message:push', response.data.message,'danger');
                 this.gettoCar();  //還要在取回一次資料，不然頁面不會變動
@@ -162,40 +144,18 @@ export default {
             const coupon = {
                 code: vm.couponcode,
             };
-            // vm.isLoading = true;
             vm.status.loading = true;
             this.$http.post(url, {data: coupon}).then((response) => {
                 if(response.data.success) {
                     console.log(response.data);
-                    // vm.isLoading = false;
                     this.$bus.$emit('message:push', response.data.message,'success');
                     this.gettoCar(); 
                 } else {
                     this.$bus.$emit('message:push', response.data.message,'danger');
                 }
-                 //還要在取回一次資料，不然頁面不會變動
                  vm.status.loading = false;
             });
         },
-        // createdOrder() {
-        //     const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/order`;
-        //     const vm = this;  
-        //     const order = vm.form;
-        //     // vm.isLoading = true;
-        //     this.$validator.validate().then((valid) => {
-        //         if (valid) {
-        //             this.$http.post(url, {data: order}).then((response) => {  //將form傳到api
-        //                 console.log('訂單已建立',response);
-        //                 vm.isLoading = false;
-        //                 if(response.data.success) {
-        //                     vm.$router.push(`/Customer_checkout/${response.data.orderId}`); //成功後轉到結帳頁面
-        //                 }
-        //             });
-        //         }else {
-        //             console.log("欄位不完整");
-        //         }
-        //     });
-        // },
         toOrdercheck() {
              this.$router.push({
                 name: 'OrderCheck',
@@ -205,9 +165,6 @@ export default {
     created() {
         const vm = this;
         this.gettoCar();
-        // vm.$bus.$on('deleteCar',(id) => {
-        //     vm.deleteCar(id);
-        // });
     },
 };
 </script>

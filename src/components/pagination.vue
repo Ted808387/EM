@@ -23,10 +23,9 @@
 
 <script>
 export default {
-    //這裡的pagination是從父層傳過來的資料，抓過來後的資料HTML也都要更改名稱
     props: ['getpagination'],
     methods: {
-        updatapage(page) { //點即觸發事件
+        updatapage(page) {
             this.$emit('userpage',page); 
         }
     }

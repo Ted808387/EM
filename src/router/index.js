@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-//官方元件
+
 import Dashboard from '@/components/Dashboard';
 import Login from '@/components/pages/Login';
 import Products from '@/components/pages/Products';
@@ -9,7 +9,7 @@ import CustomerOrder from '@/components/pages/CustomerOrder';
 import Couponcode from '@/components/pages/Couponcode';
 import CustomerCheckout from '@/components/pages/CustomerCheckout';
 import Cart from '@/components/pages/Cart';
-//後台自訂義元件
+
 import HelloWorld from '@/components/frontPages/HelloWorld';
 import frontHome from '@/components/frontPages/frontHome';
 import frontProduct from '@/components/frontPages/frontProduct';
@@ -19,17 +19,17 @@ import OrderCheck from '@/components/frontPages/OrderCheck';
 import OrderPayment from '@/components/frontPages/OrderPayment';
 import PaymentSuccessful from '@/components/frontPages/PaymentSuccessful';
 import frontCoupon from '@/components/frontPages/frontCoupon';
-// 前台自定義元件
 
 
-Vue.use(VueRouter);//啟用
+
+Vue.use(VueRouter);
 
 
 export default new VueRouter({
     routes: [
         {
-            path: '*', //如果網頁位址尾端輸入亂碼
-            redirect: '/frontHome',  //則返回設定得頁面(login)
+            path: '*',
+            redirect: '/frontHome',
         },
         {
             name: 'Login',
@@ -93,7 +93,7 @@ export default new VueRouter({
                     path: 'Products',
                     component: Products,
                     meta: {
-                        requiresAuth: true, //確認進入Products頁面需要被驗證
+                        requiresAuth: true,
                     },
                 },
                 {
@@ -101,7 +101,7 @@ export default new VueRouter({
                     path: 'Order',
                     component: Order,
                     meta: {
-                        requiresAuth: true, //確認進入Oder頁面需要被驗證
+                        requiresAuth: true,
                     },
                 },
                 {
@@ -109,7 +109,7 @@ export default new VueRouter({
                     path: 'Couponcode',
                     component: Couponcode,
                     meta: {
-                        requiresAuth: true, //確認進入Couponcode頁面需要被驗證
+                        requiresAuth: true,
                     },
                 },
                 {

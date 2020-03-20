@@ -4,7 +4,7 @@
         <section class="product">
             <div class="product-bg">
             </div>
-            <div class="productinfo mt-5 pl-5 pr-5" v-model="product">
+            <div class="productinfo mt-5 pl-5 pr-5">
                 <div class="row">
                     <div class="col-md-7">
                         <div class="product-img p-sm-0 pb-sm-3">
@@ -39,10 +39,6 @@
                             <h5 class="text-danger"><i class="fas fa-exclamation-triangle"></i></h5>
                             <p class="text-danger">快拆式濾罐與呼吸閥須定時清理更換，避免影響吸入之空氣品質</p>
                             <div class="buyproduct mt-3">
-                                <!-- <select name="" class="quantity form-control">
-                                    <option value="0" disabled selected>-- 選購數量 --</option>
-                                    </option>
-                                </select> -->
                                 <div class="select-quantity">
                                     <input type="number" class="quantity select-outline" placeholder="0" min="0" max="100" v-model.number ="num" :key="num">
                                     <div class="up-down">
@@ -74,10 +70,8 @@ export default {
     data() {
         return {
             num: 0,
-            // products: [],  
             isLoading: false, 
             product: {},
-            // pagination: {},
             status: {
                 loading: {},
             },
@@ -94,23 +88,12 @@ export default {
                 this.num -= 1;
             }
         },
-        // getproducts(page) { 
-        //     const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/products?page=${page}`;
-        //     const vm = this;  
-        //     vm.isLoading = true;
-        //     this.$http.get(url).then((response) => {
-        //         vm.products = response.data.products;  
-        //         vm.pagination = response.data.pagination;
-        //         vm.isLoading = false;
-        //     });
-        // },
         getproduct(id) {
             const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/product/${id}`;
             const vm = this;  
             vm.isLoading = true;
             this.$http.get(url).then((response) => {
                 vm.product = response.data.product;  
-                // console.log(vm.product);
                 this.product.num = 0;
                 vm.isLoading = false;
             });  
@@ -125,28 +108,14 @@ export default {
             };
             if(qty !== 0) {
                 this.$http.post(url, { data:car }).then((response) => {
-                // console.log(response);
                 this.$bus.$emit('message:push', response.data.message,'info');
                 vm.status.loading = "";
                 this.$bus.$emit('changecart');
-                // $('#productModal').modal('hide');
-                // this.gettoCar();
                 });
             } else {
                 this.$bus.$emit('message:push', '請輸入數量','danger');
             }
-
-            // this.$bus.$emit('cart', id, 1); 
         },
-        // gettoCar() {   //把購物車資料在取回，不然頁面不會變動
-        //     const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/cart`;
-        //     const vm = this;  
-        //     vm.isLoading = true;
-        //     this.$http.get(url).then((response) => {
-        //         vm.Cart = response.data.data;
-        //         vm.isLoading = false;
-        //     });
-        // },
     },
     created() {
         const vm = this;
@@ -236,7 +205,6 @@ export default {
   .total-price {
       font-size: 24px;
       float: right;
-      display: inline-block;
   }
   .addcart {
       position: absolute;

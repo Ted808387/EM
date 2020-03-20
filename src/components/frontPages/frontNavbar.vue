@@ -100,7 +100,6 @@
                           <td colspan="3" class="text-right">總計</td>
                           <td class="text-right">{{ Cart.total }}</td>
                       </tr>
-                      <!-- 如果final_total與total相同，就不出現優惠價格-->
                       <tr class="text-primary" v-if="Cart.final_total !== Cart.total">
                           <td colspan="3" class="text-right">折扣價</td>
                           <td class="text-right">{{ Cart.final_total }}</td>
@@ -150,20 +149,16 @@ export default {
         const vm = this;  
         this.$http.get(url).then((response) => {
             vm.Cart = response.data.data;
-            // console.log(vm.Cart);
         });
-      // this.Cart = Cart;
     },
-    deleteCar(id) {  //將選擇的物品id傳過來
+    deleteCar(id) { 
       const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/cart/${id}`;
       const vm = this;  
       vm.status.loading = id;
       this.$http.delete(url).then((response) => {
-                // console.log(response.data);
       vm.status.loading = '';
       this.$bus.$emit('message:push', '已刪除訂單','danger');
-      // this.$bus.$emit('deleteCar',id);
-      this.gettoCart();  //還要在取回一次資料，不然頁面不會變動
+      this.gettoCart(); 
       });
     },
     scrollTop() {
@@ -205,12 +200,6 @@ export default {
           vm.menu = false;
         }
     });
-    // },false);
-    // $(document).mouseup(function(e){
-    //   if(!$('.modal-cart').is(e.target) && $('.modal-cart').has(e.target).length === 0){ 
-    //     vm.cart = false;
-    //   }
-    // });
     this.isLoading = false;
     this.gettoCart();
     this.$bus.$on('changecart',this.gettoCart);

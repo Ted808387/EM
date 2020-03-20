@@ -64,7 +64,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="item in Cart.carts">
+                                    <tr v-for="item in Cart.carts" :key="item.id">
                                         <td>{{item.product.title}} X {{item.qty}}</td>
                                         <td class="text-right">{{item.total | currency}}</td>
                                     </tr>
@@ -76,27 +76,30 @@
                                         </td>
                                         <td class="text-right">
                                             <h5 v-if="Cart.total === Cart.final_total">{{Cart.total | currency}}</h5>
-                                            <h5 class="text-primary" v-if="Cart.total>Cart.final_total">
-                                                discount</br>{{Cart.final_total | currency}}
+                                            <h5 class="text-primary" v-if="Cart.total">
+                                                Discount&nbsp;&nbsp;&nbsp;{{Cart.final_total | currency}}
                                             </h5>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" id="credit_card" name="payment-method" v-model="form.payment_method" value="credit_card">
-                                        <label for="credit_card">信用卡</label>
-                                        </input></td>
+                                        <td>
+                                            <input type="radio" id="credit_card" name="payment-method" v-model="form.payment_method" value="credit_card">
+                                            <label for="credit_card">信用卡</label>
+                                        </td>
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" id="PayPal" name="payment-method" v-model="form.payment_method" value="PayPal">
-                                        <label for="PayPal">PayPal</label>
-                                        </input></td>
+                                        <td>
+                                            <input type="radio" id="PayPal" name="payment-method" v-model="form.payment_method" value="PayPal">
+                                            <label for="PayPal">PayPal</label>
+                                        </td>
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="radio" id="Pick_up_payment" name="payment-method" v-model="form.payment_method" value="Pick_up_payment">
-                                        <label for="Pick_up_payment">超商取貨付款</label>
-                                        </input></td>
+                                        <td>
+                                            <input type="radio" id="Pick_up_payment" name="payment-method" v-model="form.payment_method" value="Pick_up_payment">
+                                            <label for="Pick_up_payment">超商取貨付款</label>
+                                        </td>
                                         <td></td>
                                     </tr>
                                     <tr class="text-center">
@@ -149,7 +152,6 @@ export default {
             const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/order`;
             const vm = this;  
             const order = vm.form;
-            // vm.isLoading = true;
             this.$validator.validate().then((valid) => {
                 if (valid) {
                     this.$http.post(url, {data: order}).then((response) => {  //將form傳到api

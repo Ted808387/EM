@@ -45,13 +45,9 @@ export default {
   },
   created() {
     const vm = this;
-    // 自定義名稱 'messsage:push'
-    // message: 傳入參數
-    // status: 樣式，預設值為 warning
-    vm.$bus.$on('message:push', (message, status = 'warning') => {  //呼叫bus用on監聽的方式 並再message:push去加上後方message與status = 'warning'參數
-      vm.updateMessage(message, status); //在觸發updateMessage
+    vm.$bus.$on('message:push', (message, status = 'warning') => {  
+      vm.updateMessage(message, status);
     });
-    // vm.$bus.$on('messsage:push');  這裡是外傳內層
   },
 };
 </script>

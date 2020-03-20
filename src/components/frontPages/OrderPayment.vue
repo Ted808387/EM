@@ -88,7 +88,6 @@ export default {
             vm.isLoading = true;
             this.$http.get(api).then((response) => {
                 vm.order = response.data.order;
-                // console.log(response.data);
                 vm.isLoading = false;
                 console.log(response);
             });
@@ -107,10 +106,7 @@ export default {
         },
     },
     created() {
-        // this.orderId = this.$route.query.orderId;  //取得網址後段ID
-        // console.log(this.orderId);
         this.getOder(this.$route.query.id);
-        // this.getOder();
     },
 }
 </script>
