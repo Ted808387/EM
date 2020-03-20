@@ -15,7 +15,7 @@
                 <Slide></Slide> 
             </div>
             <!-- Pollution Solution -->
-            <div class="Pollutionsolution">
+            <div id="item1" class="Pollutionsolution">
                 <div class="container">
                     <h2 class="text-center mb-5 font-weight-bold">Pollution Solution</h2>
                     <div class="container-fluid">
@@ -115,7 +115,7 @@ export default {
     methods: {
         scrolldown() {
             $('html,body').animate({
-                scrollTop: 850
+                scrollTop: $('#item1').offset().top - 100
             }, 600);
         },
     },

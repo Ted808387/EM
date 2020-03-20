@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="product_content p-sm-0">
-                            <h5>{{ product.category }}</h5>
+                            <h5 class="category">{{ product.category }}</h5>
                             <h3 class="font-weight-bold mb-3">{{ product.title }}</h3>
                             <del class="d-inline-block">{{ product.origin_price | currency }}</del><h3 class="font-weight-bold d-inline-block text-primary">{{ product.price | currency }}</h3>
                             <p>{{ product.description }}</p>
@@ -158,6 +158,9 @@ export default {
   }
   .product-list {
       margin-bottom: 10px;
+  }
+  .category {
+      color: rgb(135, 138, 135);
   }
   .select-quantity {
       display: inline-block;

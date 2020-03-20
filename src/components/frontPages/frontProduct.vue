@@ -159,7 +159,6 @@ export default {
                 qty  //可直接用一個變數代替，直接將值帶進來
             };
             this.$http.post(url, { data:car }).then((response) => {
-                console.log(response);
                 this.$bus.$emit('message:push', response.data.message,'info');
                 vm.status.loading = "";
                 this.$bus.$emit('changecart');

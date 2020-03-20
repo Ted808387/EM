@@ -36,7 +36,7 @@ new Vue({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log('to', to, 'from', from, 'next', next);
+  // console.log('to', to, 'from', from, 'next', next);
   if(to.meta.requiresAuth) {
    const api = `${process.env.API_PATH}/api/user/check`;
           axios.post(api).then((response) => {
