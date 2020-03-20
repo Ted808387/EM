@@ -9,7 +9,7 @@
                 <h2 class="text-center mt-3 mb-5 font-weight-bold">Shopping Cart</h2>
                 <div class="Nothing text-center" v-if="Cart.total === 0">
                     <h3 class="font-weight-bold mb-5">－&nbsp;購物車無物品&nbsp;－</h3>
-                    <router-link to="/frontProduct">
+                    <router-link to="/frontHome/frontProduct">
                         <button class="btn btn-success btn-lg">Shopping now</button>
                     </router-link>
                 </div>
@@ -18,12 +18,14 @@
                                 <table class="table mt-4" v-if="Cart.total !== 0">
                             <thead style="width: 500px;">
                                 <tr>
-                                    <th width="100"></th>
+                                    <th width="100">
+                                        <button type="buttom" class="btn btn-outline-danger" @click.stop="deleteall">Clear</button>
+                                    </th>
                                     <th class="productimg" width="150"></th>
-                                    <th>Product</th>
-                                    <th width="150" class="text-center">Price</th>
-                                    <th width="200" class="text-center">Quantity</th>
-                                    <th width="100">Total</th>
+                                    <th class="align-middle">Product</th>
+                                    <th width="150" class="text-center align-middle">Price</th>
+                                    <th width="200" class="text-center align-middle">Quantity</th>
+                                    <th width="100" class="align-middle">Total</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -119,8 +121,8 @@ export default {
     },
     methods: {
         gettoCar() {   //把購物車資料在取回，不然頁面不會變動
+            const vm = this;
             const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/cart`;
-            const vm = this;  
             vm.isLoading = true;
             this.$http.get(url).then((response) => {
                 vm.Cart = response.data.data;
@@ -128,8 +130,8 @@ export default {
             });
         },
         deleteCar(id) {  //將選擇的物品id傳過來
-            const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/cart/${id}`;
             const vm = this;  
+            const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/cart/${id}`;
             vm.status.loading = true;
             this.$http.delete(url).then((response) => {
                 vm.status.loading = false;
@@ -138,9 +140,25 @@ export default {
                 this.$bus.$emit('changecart');
             });
         },
+        deleteall() {
+            const vm = this;
+            const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/cart`;
+            this.$http.get(url).then((response) => {
+                response.data.data.carts.forEach((item) => {
+                    const api = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/cart/${item.id}`;
+                    this.$http.delete(api).then((response) => {
+                        this.gettoCar();
+                        this.$bus.$emit('changecart');
+                    });
+                });
+                    if(response) {
+                        this.$bus.$emit('message:push', '清空購物車','danger');
+                    }
+            });
+        },
         addCouponCode() {
-            const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/coupon`;
             const vm = this;  
+            const url = `${process.env.API_PATH}/api/${process.env.CUSTOMPATH}/coupon`;
             const coupon = {
                 code: vm.couponcode,
             };

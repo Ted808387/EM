@@ -107,7 +107,7 @@
                   </tfoot>
                 </table>
                 <router-link to="/frontHome/frontCart" v-if="Cart.total !== 0">
-                  <button type="button" class="shop-btn btn btn-primary float-right font-weight-bold" style="width: 100%;" @click="cart = !cart">
+                  <button type="button" class="shop-btn btn btn-primary float-right font-weight-bold" style="width: 100%;" @click.stop="cart = !cart">
                     Checkout
                   </button>
                 </router-link>
